@@ -5,14 +5,10 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Введите количество стенок искомых обьемов!");
         Scanner scanner = new Scanner(System.in);
-        int numCount = scanner.nextInt();
-        int[] height = new int[numCount];
-        System.out.println("Введите разные высоты согласно их колличества: - " + numCount);
-        for (int i = 0; i < numCount; i++) {
-            height[i] = scanner.nextInt();
-        }
-        System.out.println("---------------");
-        System.out.println(Arrays.toString(height));
+        int count = scanner.nextInt();
+
+        int[] height = inputArr(count);
+
         maxArea(height);
     }
 
@@ -27,5 +23,16 @@ public class Main {
             }
         }
         System.out.println(maxArea);
+    }
+    private static int[] inputArr(int numCount){
+        Scanner scanner = new Scanner(System.in);
+        int[] height = new int[numCount];
+        System.out.println("Введите разные высоты согласно их колличества: - " + numCount);
+        for (int i = 0; i < numCount; i++) {
+            height[i] = scanner.nextInt();
+        }
+        System.out.println("---------------");
+        System.out.println(Arrays.toString(height));
+        return height;
     }
 }
